@@ -1,0 +1,64 @@
+{% extends 'index.html' %}
+
+{% block content %}
+{% load static %}
+
+<!-- Masthead-->
+<header class="masthead" style="background: url({% static 'assets/img/66762.jpg' %}) no-repeat center center; background-size: cover;">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white">
+                    <!-- Page heading-->
+                    <h1 class="mb-5">Suscribase a nuestro email de novedades</h1>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col">
+                                <!-- <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                                 -->
+                                 {{form.as_p}}
+                            </div>
+                            <div class="col-auto"><button class="btn btn-primary btn-sm" id="submitButton" type="submit" name="action" value="Registrarme">Registrarme</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Icons Grid-->
+<section class="features-icons bg-light text-center">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <h3>Encuesta</h3>
+                    <form action="" method="post" class="form-12-col">
+                        {% csrf_token %}
+                        {{ form_encuesta.as_p }}
+                        <button class="btn btn-primary btn-sm" type="submit" name="action" value="Encuesta">Enviar</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-5">
+
+            <div class="col-lg-12">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <h3>Contactenos</h3>
+                    <form action="" method="post" class="form-12-col">
+                        {% csrf_token %}
+                        {{ form_contactenos.as_p }}
+                        <button class="btn btn-primary btn-sm" type="submit" name="action" value="Contactenos">Enviar</button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block content %}
+{% load static %}
+
+<!-- Icons Grid-->
+<section class="features-icons bg-light">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <h2>Resultados de su búsqueda:</h2>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+
+            {% for equipo in resultados %}
+
+            <p>Club: {{ equipo.equipo }}</p>
+            <p>Año de Fundación: {{ equipo.fundacion }}</p>
+            <p>Presidente Actual: {{ equipo.presidente }}</p>
+            <p>Director Técnico Actual: {{ equipo.dt }}</p>
+            <p>Liga: {{ equipo.division }}</p>
+            <hr>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
