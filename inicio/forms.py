@@ -2,7 +2,7 @@ from dataclasses import fields
 import email
 from pyexpat import model
 from django import forms 
-from inicio.models import InformeSemanalModel, EncuestaModel, ContactenosModel
+from inicio.models import InformeSemanalModel, EncuestaModel, ContactenosModel, EquiposModel
 
 
 class FormularioDeInscripcion(forms.ModelForm):
@@ -29,3 +29,20 @@ class FormularioContactenos(forms.ModelForm):
     class Meta:
         model = ContactenosModel
         fields = ['nombre', 'email', 'asunto', 'mensaje']
+    
+class FormularioEquipo(forms.ModelForm):
+    def __str__(self):
+        return f"Equipo: {self.equipo}"
+    equipo = forms.CharField(max_length=50) 
+    fundacion = forms.IntegerField()
+    presidente = forms.CharField(max_length = 50)
+    dt = forms.CharField(max_length = 50)
+    division = forms.CharField(max_length = 50)
+
+    class Meta:
+        model = EquiposModel
+        fields = ['equipo', 'fundacion', 'presidente', 'dt', 'division']
+
+    
+
+

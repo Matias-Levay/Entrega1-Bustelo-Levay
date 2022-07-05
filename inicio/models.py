@@ -20,6 +20,8 @@ class ContactenosModel(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
 
 class EquiposModel(models.Model):
+    def __str__(self):
+        return f"Equipo: {self.equipo}"
     equipo = models.CharField(max_length=150, null=False)
     fundacion = models.IntegerField(null=False)
     presidente = models.CharField(max_length=150, null=False)
