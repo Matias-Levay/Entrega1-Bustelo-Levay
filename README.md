@@ -4,6 +4,7 @@ Entrega del practico intermedio curso python camada 31075 CoderHouse.
 
 Autores: Matias Bustelo, Matias Levay.
 
+Video explicando cómo funciona el blog: https://www.loom.com/share/be32b9d9e0ea48a5953949af23571091
 ---
 
 ## Descripcion
